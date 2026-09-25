@@ -3,17 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- إجبار المتصفح على استخدام الوضع الفاتح فقط -->
+    <!-- إجبار المتصفحات الرسمية على الوضع الفاتح -->
     <meta name="color-scheme" content="only light">
+    <meta name="supported-color-schemes" content="only light">
     <title>متجر سِوار - نقاء الذهب من قلب الطبيعة</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
     <style>
+        /* إلغاء ميزة Forced Dark Mode الخاصة بالهواتف والمتصفحات (Samsung/Chrome) */
+        html {
+            color-scheme: light !important;
+            forced-color-adjust: none !important;
+            -webkit-filter: none !important;
+            filter: none !important;
+        }
+
         :root {
-            /* تثبيت نظام الألوان الفاتح */
-            color-scheme: only light;
-            
+            color-scheme: light !important;
             --primary-amber: #d97706;
             --primary-gold: #f59e0b;
             --light-gold: #fef3c7;
@@ -27,14 +34,12 @@
             --radius: 16px;
         }
 
-        /* حماية الألوان من الوضع الداكن للمتصفح والأجهزة */
+        /* حماية الألوان من تحويل المتصفح التلقائي */
         @media (prefers-color-scheme: dark) {
-            :root {
-                color-scheme: only light;
-            }
-            body {
+            html, body {
                 background-color: #fffbeb !important;
                 color: #1c1917 !important;
+                filter: none !important;
             }
         }
 
