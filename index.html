@@ -3,12 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- إجبار المتصفح على استخدام الوضع الفاتح فقط -->
+    <meta name="color-scheme" content="only light">
     <title>متجر سِوار - نقاء الذهب من قلب الطبيعة</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
+            /* تثبيت نظام الألوان الفاتح */
+            color-scheme: only light;
+            
             --primary-amber: #d97706;
             --primary-gold: #f59e0b;
             --light-gold: #fef3c7;
@@ -22,6 +27,17 @@
             --radius: 16px;
         }
 
+        /* حماية الألوان من الوضع الداكن للمتصفح والأجهزة */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                color-scheme: only light;
+            }
+            body {
+                background-color: #fffbeb !important;
+                color: #1c1917 !important;
+            }
+        }
+
         * {
             box-sizing: border-box;
             margin: 0;
@@ -30,15 +46,15 @@
         }
 
         body {
-            background-color: var(--bg-light);
-            color: var(--text-dark);
+            background-color: var(--bg-light) !important;
+            color: var(--text-dark) !important;
             line-height: 1.6;
             padding-bottom: 80px;
         }
 
         /* Header */
         header {
-            background-color: rgba(255, 255, 255, 0.95);
+            background-color: rgba(255, 255, 255, 0.95) !important;
             backdrop-filter: blur(10px);
             position: sticky;
             top: 0;
@@ -58,7 +74,7 @@
         .logo {
             font-size: 1.8rem;
             font-weight: 800;
-            color: var(--dark-gold);
+            color: var(--dark-gold) !important;
             text-decoration: none;
             display: flex;
             align-items: center;
@@ -77,19 +93,19 @@
             position: relative;
             cursor: pointer;
             font-size: 1.1rem;
-            background: var(--light-gold);
+            background: var(--light-gold) !important;
             padding: 8px 16px;
             border-radius: 20px;
             display: flex;
             align-items: center;
             gap: 8px;
             font-weight: bold;
-            color: var(--dark-gold);
+            color: var(--dark-gold) !important;
         }
 
         .cart-badge {
-            background-color: var(--primary-amber);
-            color: var(--white);
+            background-color: var(--primary-amber) !important;
+            color: var(--white) !important;
             font-size: 0.85rem;
             width: 22px;
             height: 22px;
@@ -104,7 +120,7 @@
             max-width: 1200px;
             margin: 1.5rem auto;
             padding: 2.5rem 2rem;
-            background: linear-gradient(135deg, #fef3c7 0%, #fff 100%);
+            background: linear-gradient(135deg, #fef3c7 0%, #fff 100%) !important;
             border-radius: calc(var(--radius) * 1.5);
             text-align: center;
             border: 1px solid #fde68a;
@@ -113,20 +129,20 @@
         .hero h1 {
             font-size: 2.5rem;
             font-weight: 800;
-            color: var(--dark-gold);
+            color: var(--dark-gold) !important;
             margin-bottom: 0.5rem;
         }
 
         .hero p {
             font-size: 1.15rem;
-            color: var(--text-muted);
+            color: var(--text-muted) !important;
             font-weight: 500;
         }
 
         .shipping-tag {
             display: inline-block;
-            background-color: var(--primary-amber);
-            color: var(--white);
+            background-color: var(--primary-amber) !important;
+            color: var(--white) !important;
             padding: 0.4rem 1.2rem;
             border-radius: 20px;
             font-size: 0.95rem;
@@ -148,7 +164,7 @@
 
         .section-title h2 {
             font-size: 2rem;
-            color: var(--dark-gold);
+            color: var(--dark-gold) !important;
         }
 
         .product-grid {
@@ -158,7 +174,7 @@
         }
 
         .product-card {
-            background: var(--white);
+            background: var(--white) !important;
             border-radius: var(--radius);
             overflow: hidden;
             box-shadow: var(--shadow);
@@ -179,8 +195,8 @@
             position: absolute;
             top: 12px;
             right: 12px;
-            background: #ef4444;
-            color: white;
+            background: #ef4444 !important;
+            color: white !important;
             padding: 4px 12px;
             border-radius: 12px;
             font-size: 0.8rem;
@@ -198,12 +214,12 @@
         .product-title {
             font-size: 1.25rem;
             font-weight: 700;
-            color: var(--text-dark);
+            color: var(--text-dark) !important;
             margin-bottom: 0.4rem;
         }
 
         .product-desc {
-            color: var(--text-muted);
+            color: var(--text-muted) !important;
             font-size: 0.9rem;
             margin-bottom: 1.2rem;
             flex-grow: 1;
@@ -218,12 +234,12 @@
         .product-price {
             font-size: 1.35rem;
             font-weight: 800;
-            color: var(--dark-gold);
+            color: var(--dark-gold) !important;
         }
 
         .btn-add {
-            background-color: var(--primary-amber);
-            color: var(--white);
+            background-color: var(--primary-amber) !important;
+            color: var(--white) !important;
             border: none;
             padding: 0.6rem 1.2rem;
             border-radius: 20px;
@@ -233,7 +249,7 @@
         }
 
         .btn-add:hover {
-            background-color: var(--dark-gold);
+            background-color: var(--dark-gold) !important;
         }
 
         /* Modal Cart */
@@ -251,7 +267,7 @@
         }
 
         .cart-content {
-            background: var(--white);
+            background: var(--white) !important;
             padding: 2rem;
             border-radius: var(--radius);
             width: 90%;
@@ -259,6 +275,7 @@
             max-height: 85vh;
             overflow-y: auto;
             position: relative;
+            color: var(--text-dark) !important;
         }
 
         .close-btn {
@@ -267,7 +284,7 @@
             left: 20px;
             font-size: 1.5rem;
             cursor: pointer;
-            color: var(--text-muted);
+            color: var(--text-muted) !important;
         }
 
         .cart-items {
@@ -292,7 +309,8 @@
         }
 
         .qty-btn {
-            background: var(--light-gold);
+            background: var(--light-gold) !important;
+            color: var(--dark-gold) !important;
             border: none;
             width: 28px;
             height: 28px;
@@ -313,8 +331,8 @@
 
         .btn-whatsapp {
             width: 100%;
-            background-color: var(--whatsapp-color);
-            color: var(--white);
+            background-color: var(--whatsapp-color) !important;
+            color: var(--white) !important;
             border: none;
             padding: 1rem;
             border-radius: 30px;
