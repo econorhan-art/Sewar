@@ -18,6 +18,7 @@
             --text-muted: #a3a3a3;
             --white: #ffffff;
             --whatsapp-color: #25D366;
+            --facebook-color: #1877F2;
             --shadow-gold: 0 0 15px rgba(212, 175, 55, 0.25);
             --radius: 16px;
         }
@@ -100,6 +101,9 @@
             border-radius: 50%;
             display: flex;
             align-items: center;
+            justify-content: justify;
+            display: flex;
+            align-items: center;
             justify-content: center;
         }
 
@@ -140,6 +144,65 @@
             font-weight: bold;
             border: 1px solid var(--primary-gold);
             box-shadow: 0 0 12px rgba(212, 175, 55, 0.3);
+        }
+
+        /* Reviews Banner Section */
+        .reviews-section {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+        }
+
+        .reviews-card {
+            background: linear-gradient(135deg, rgba(20, 20, 20, 0.95) 0%, rgba(35, 28, 10, 0.95) 100%) !important;
+            border: 1px solid var(--primary-gold);
+            border-radius: var(--radius);
+            padding: 2rem;
+            text-align: center;
+            box-shadow: var(--shadow-gold);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .reviews-card h3 {
+            font-size: 1.6rem;
+            color: var(--text-gold);
+            font-weight: 800;
+        }
+
+        .reviews-stars {
+            color: #ffd700;
+            font-size: 1.4rem;
+            letter-spacing: 2px;
+        }
+
+        .reviews-card p {
+            color: var(--text-light);
+            font-size: 1.05rem;
+            max-width: 600px;
+        }
+
+        .btn-reviews {
+            background: var(--gold-gradient) !important;
+            color: #000 !important;
+            text-decoration: none;
+            padding: 0.8rem 2rem;
+            border-radius: 30px;
+            font-weight: 800;
+            font-size: 1.05rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+        }
+
+        .btn-reviews:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5);
         }
 
         /* Products Grid */
@@ -387,6 +450,18 @@
         <h1>مجموعة عسل سوار الطبيعية 🍯</h1>
         <p>نقاء الذهب من قلب الطبيعة ✨</p>
         <div class="shipping-tag">🚚 شحن لجميع المحافظات</div>
+    </section>
+
+    <!-- قسم آراء العملاء -->
+    <section class="reviews-section">
+        <div class="reviews-card">
+            <h3>آراء وتجارب عملائنا 💬</h3>
+            <div class="reviews-stars">⭐⭐⭐⭐⭐</div>
+            <p>ثقتكم هي سر نجاحنا! تعرّف على تقييمات وآراء العملاء الذين جربوا منتجات عسل سِوار الطبيعية.</p>
+            <a href="https://www.facebook.com/share/p/19ud51GLLp/?mibextid=wwXIfr" target="_blank" class="btn-reviews">
+                👍 مشاهدة آراء العملاء على فيسبوك
+            </a>
+        </div>
     </section>
 
     <section class="products-section">
